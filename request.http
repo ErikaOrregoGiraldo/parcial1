@@ -1,0 +1,57 @@
+POST http://localhost:3000/api/v1/buys/buy
+Content-Type: application/json
+
+{
+  "DueDate": "2020-01-20",
+  "DocNum": "24868824",
+  "Status": "Payable",
+  "Line": {
+    "Amount": 10000,
+    "DetailType": "ExpenseDetail",
+    "ExpenseDetail": {
+      "Customer": {
+        "value": "CD34",
+        "name": "Erika Customer",
+        "Ref": {
+          "value": "ABC456",
+          "name": "Erika Construction"
+        }
+      },
+    "Account": {
+      "value": "GH45",
+      "name": "Fuel"
+    },
+    "LineStatus": "Billable"
+    }
+  },
+  "Vendor": {
+    "value": "GHI456",
+    "name": "Sample Bank"
+  },
+  "TotalAmt": 100.19
+}
+
+###
+GET http://localhost:3000/api/v1/buys
+
+###
+GET http://localhost:3000/api/v1/buys/FG45
+
+###
+DELETE http://localhost:3000/api/v1/buys/622f7b9a43f805bd68743e96
+
+###
+PUT http://localhost:3000/api/v1/buys/622f7b9a43f805bd68743e96
+Content-Type: application/json
+
+{
+  "DocNum": "9",
+  "Line": {
+    "Amount": 7000,
+    "DetailType": "Hola",
+    "Account": {
+      "value": "123",
+      "name": "Cambio"
+    }
+  }
+}
